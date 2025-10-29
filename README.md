@@ -71,18 +71,8 @@ npm run lint
 
 ---
 
-## 🖼 Capturas de Pantalla
-
-*(Aquí puedes añadir imágenes de tu portafolio, por ejemplo:)*
-
-![Home](./screenshots/home.png)  
-![Proyectos](./screenshots/projects.png)  
-
----
-
 ## 🌐 Demo en Vivo
 
-Puedes agregar un enlace a tu demo:
 
 [Ver Demo](https://tudominio.com)
 
