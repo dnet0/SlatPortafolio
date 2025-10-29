@@ -4,10 +4,12 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Send } from "lucide-react";
+import { LocateIcon, Mail, MapPin, Phone, Send } from "lucide-react";
 import { SiLinkedin } from "react-icons/si";
+
 import { SiGithub } from "react-icons/si";
 import { CustomTitle } from "./CustomTitle";
+import { CustomSubDiv } from "./CustomSubDiv";
 
 export const Contact = () => {
   const ref = useRef(null);
@@ -153,48 +155,43 @@ export const Contact = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="space-y-8"
+              className="space-y-8 "
             >
               {/* Email */}
-              <div className="bg-card rounded-2xl p-6 shadow-lg border border-border">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground">
-                      Email
-                    </h3>
+              <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
+                <h2 className="text-2xl font-medium text-foreground mb-2">
+                  Información de Contacto
+                </h2>
+                <CustomSubDiv
+                  icon={Phone}
+                  title="Telefono"
+                  subTitle="+34 610932370"
+                  href="tel:+34610932370"
+                />
+                <CustomSubDiv
+                  icon={Mail}
+                  title="Email"
+                  subTitle="johansalgut@gmail.com"
+                  href="mailto:johansalgut@gmail.com"
+                />
+                <CustomSubDiv
+                  icon={MapPin}
+                  title="Ubicación"
+                  subTitle="Madrid"
+                />
+                <hr />
+                {/* Social Links */}
+                <div>
+                  <Button className="items-center gap-4 p-5 rounded-lg ">
                     <a
-                      href="mailto: johansalgut@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      href="https://github.com/dnet0"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      johansalgut@gmail.com
+                      <SiGithub className="w-5 h-5 text-primary" />
                     </a>
-                  </div>
+                  </Button>
                 </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="bg-card rounded-2xl p-6 shadow-lg border border-border space-y-4">
-                <h3 className="text-lg font-semibold text-foreground mb-4">
-                  Redes Sociales
-                </h3>
-
-                <a
-                  href="https://github.com/dnet0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-3 rounded-lg hover:bg-primary/5 transition-colors group"
-                >
-                  <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                    <SiGithub className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-foreground group-hover:text-primary transition-colors">
-                    GitHub
-                  </span>
-                </a>
-
                 <a
                   href="https://www.linkedin.com/in/johansalgut/"
                   target="_blank"
@@ -204,14 +201,11 @@ export const Contact = () => {
                   <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                     <SiLinkedin className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-foreground group-hover:text-primary transition-colors">
-                    LinkedIn
-                  </span>
                 </a>
               </div>
 
               {/* CTA */}
-              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border border-primary/20">
+              <div className="bg-linear-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border border-primary/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">
                   ¿Buscás incorporar talento o iniciar un nuevo proyecto?
                 </h3>
