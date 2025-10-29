@@ -44,22 +44,24 @@ export const Projects = () => {
                 className="bg-card rounded-2xl overflow-hidden shadow-lg border border-border card-hover"
               >
                 {/* Project Image */}
-                <div className="relative h-48 overflow-hidden bg-muted group/image">
-                  <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.1, rotate: 1 }}
-                    transition={{ duration: 0.4 }}
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent opacity-60 group-hover/image:opacity-80 transition-opacity" />
-                  <motion.div
-                    className="absolute inset-0 bg-linear-to-br from-primary/20 to-accent/20"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </div>
+                {project.image && (
+                  <div className="relative h-48 overflow-hidden bg-muted group/image">
+                    <motion.img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.1, rotate: 1 }}
+                      transition={{ duration: 0.4 }}
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent opacity-60 group-hover/image:opacity-80 transition-opacity" />
+                    <motion.div
+                      className="absolute inset-0 bg-linear-to-br from-primary/20 to-accent/20"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </div>
+                )}
 
                 {/* Project Info */}
                 <div className="p-6 space-y-4">

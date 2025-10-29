@@ -171,27 +171,23 @@ export const Contact = () => {
                 />
                 <hr />
                 {/* Social Links */}
-                <div>
-                  <Button className="items-center gap-4 p-5 rounded-lg ">
-                    <a
-                      href="https://github.com/dnet0"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <SiGithub className="w-5 h-5 text-primary" />
-                    </a>
-                  </Button>
-                </div>
-                <a
-                  href="https://www.linkedin.com/in/johansalgut/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-3 rounded-lg hover:bg-primary/5 transition-colors group"
-                >
-                  <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                <div className="flex justify-start mt-2">
+                  <a
+                    href="https://github.com/dnet0"
+                    target="_blank"
+                    className="gap-4 p-3 rounded-lg hover:bg-primary/5"
+                  >
+                    <SiGithub className="w-5 h-5 text-primary" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/johansalgut/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="gap-4 p-3 rounded-lg hover:bg-primary/5"
+                  >
                     <SiLinkedin className="w-5 h-5 text-primary" />
-                  </div>
-                </a>
+                  </a>
+                </div>
               </CustomCard>
               {/* CTA */}
               <div className="bg-linear-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border border-primary/20">
