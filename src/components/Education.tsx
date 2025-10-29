@@ -1,63 +1,182 @@
-import { motion } from "framer-motion";
-import { CustomTitle } from "./CustomTitle";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { GraduationCap, Calendar, BookOpen, Award } from "lucide-react";
+
+const educationData = {
+  degree: "Grado de Ingeniería del Software",
+  institution: "Universidad Complutense de Madrid",
+  period: "2019 - 2023",
+  status: "Egresado",
+  description: "Formación completa en desarrollo de software, arquitectura de sistemas y metodologías ágiles.",
+  highlight: "Trabajo de Fin de Grado: AdaptaMaterialEscolar - Plataforma web con editor de texto para adaptar materiales educativos, integrando API de ChatGPT para generar resúmenes automáticos."
+};
+
+const certifications = [
+  {
+    title: "Arquitectura Software Moderna: DDD, Eventos, Microservicios",
+    institution: "Udemy",
+    date: "Septiembre 2025",
+    focus: "Arquitectura escalable y patrones modernos"
+  },
+  {
+    title: "React Native CLI: Aplicaciones nativas para iOS y Android",
+    institution: "Udemy",
+    date: "Junio 2025",
+    focus: "Desarrollo móvil multiplataforma"
+  },
+  {
+    title: "Google: Inteligencia Artificial y Productividad",
+    institution: "Santander Open Academy",
+    date: "Enero 2025",
+    focus: "IA aplicada a productividad"
+  }
+];
 
 export const Education = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 bg-muted/30"
-    >
-      <div className="container mx-auto text-center">
+    <section id="educacion" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-muted/30">
+      <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6"
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          {/* Name */}
-          <CustomTitle title="Educación" subTitle="" />
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={isInView ? { scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6"
+          >
+            <GraduationCap className="w-8 h-8 text-primary" />
+          </motion.div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-gradient">Formación Académica</span>
+          </h2>
+          <div className="w-24 h-1 bg-linear-to-r from-transparent via-primary to-transparent mx-auto mb-6" />
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Educación universitaria y especialización en ingeniería de software
+          </p>
         </motion.div>
 
-        {/* Floating decoration with multiple orbs */}
-        <div className="mt-16 relative h-40">
+        <div className="max-w-4xl mx-auto space-y-12">
+          {/* University Education */}
           <motion.div
-            animate={{
-              y: [0, -20, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute left-1/2 top-0 -translate-x-1/2 w-32 h-32 rounded-full bg-linear-to-br from-primary/30 to-accent/30 blur-3xl"
-          />
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="relative"
+          >
+            <div className="card-hover bg-card border border-border rounded-2xl overflow-hidden">
+              <div className="p-8 md:p-12">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10">
+                        <GraduationCap className="w-6 h-6 text-primary" />
+                      </div>
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20">
+                        {educationData.status}
+                      </span>
+                    </div>
+                    <h3 className="text-3xl font-bold mb-2 text-foreground">
+                      {educationData.degree}
+                    </h3>
+                    <p className="text-lg text-primary font-semibold mb-1">
+                      {educationData.institution}
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <Calendar className="w-5 h-5" />
+                    <span className="text-sm font-medium">{educationData.period}</span>
+                  </div>
+                </div>
+
+                <div className="w-full h-px bg-linear-to-r from-transparent via-border to-transparent mb-6" />
+
+                <p className="text-muted-foreground text-base leading-relaxed mb-6">
+                  {educationData.description}
+                </p>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="bg-primary/5 border border-primary/10 rounded-xl p-6"
+                >
+                  <div className="flex items-start gap-3">
+                    <BookOpen className="w-5 h-5 text-primary shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wide">
+                        Proyecto Destacado
+                      </h4>
+                      <p className="text-foreground/80 text-sm leading-relaxed">
+                        {educationData.highlight}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-primary/5 to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-linear-to-tr from-accent/5 to-transparent pointer-events-none" />
+            </div>
+          </motion.div>
+
+          {/* Professional Certifications */}
           <motion.div
-            animate={{
-              y: [0, -15, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.5,
-            }}
-            className="absolute left-1/3 top-10 w-20 h-20 rounded-full bg-linear-to-br from-accent/20 to-primary/20 blur-2xl"
-          />
-          <motion.div
-            animate={{
-              y: [0, -25, 0],
-              scale: [1, 1.15, 1],
-            }}
-            transition={{
-              duration: 4.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-            className="absolute right-1/3 top-5 w-24 h-24 rounded-full bg-linear-to-br from-primary/25 to-accent/25 blur-3xl"
-          />
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent/10">
+                <Award className="w-5 h-5 text-accent" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground">
+                Certificaciones Profesionales
+              </h3>
+            </div>
+
+            <div className="grid gap-6">
+              {certifications.map((cert, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                  className="group relative bg-card/50 border border-border/50 rounded-xl p-6 hover:bg-card hover:border-border transition-all duration-300"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                        {cert.title}
+                      </h4>
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <p className="text-sm text-primary font-medium">
+                          {cert.institution}
+                        </p>
+                        <span className="text-muted-foreground text-xs">•</span>
+                        <div className="flex items-center gap-1.5 text-muted-foreground text-sm">
+                          <Calendar className="w-3.5 h-3.5" />
+                          <span>{cert.date}</span>
+                        </div>
+                      </div>
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20">
+                        {cert.focus}
+                      </span>
+                    </div>
+                  </div>
+
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

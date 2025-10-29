@@ -1,5 +1,3 @@
-import { Heart } from "lucide-react";
-
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
