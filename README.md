@@ -6,11 +6,11 @@ Un proyecto de portafolio personal construido con **React**, **TypeScript** y **
 
 ## 🚀 Tecnologías
 
-* **React** - Biblioteca para interfaces de usuario.
-* **TypeScript** - Superset de JavaScript con tipado estático.
-* **Vite** - Herramienta de construcción ultrarrápida.
-* **ESLint** - Linter para mantener la calidad del código.
-* **Node.js** - Entorno de ejecución de JavaScript.
+- **React** - Biblioteca para interfaces de usuario.
+- **TypeScript** - Superset de JavaScript con tipado estático.
+- **Vite** - Herramienta de construcción ultrarrápida.
+- **ESLint** - Linter para mantener la calidad del código.
+- **Node.js** - Entorno de ejecución de JavaScript.
 
 ---
 
@@ -59,9 +59,9 @@ El resultado se guardará en la carpeta `dist`.
 
 El proyecto incluye reglas básicas para **TypeScript** y **React**:
 
-* Reglas recomendadas de TypeScript.
-* Reglas recomendadas de React.
-* Posibilidad de añadir configuraciones más estrictas (`strictTypeChecked`, `stylisticTypeChecked`) y plugins (`eslint-plugin-react-x`, `eslint-plugin-react-dom`).
+- Reglas recomendadas de TypeScript.
+- Reglas recomendadas de React.
+- Posibilidad de añadir configuraciones más estrictas (`strictTypeChecked`, `stylisticTypeChecked`) y plugins (`eslint-plugin-react-x`, `eslint-plugin-react-dom`).
 
 Ejecuta ESLint con:
 
@@ -75,8 +75,8 @@ npm run lint
 
 *(Aquí puedes añadir imágenes de tu portafolio, por ejemplo:)*
 
-![Home](./screenshots/home.png)
-![Proyectos](./screenshots/projects.png)
+![Home](./screenshots/home.png)  
+![Proyectos](./screenshots/projects.png)  
 
 ---
 
@@ -103,3 +103,4 @@ Si deseas contribuir:
 ## 🗑️ Licencia
 
 Este proyecto está bajo la [MIT License](LICENSE).
+
