@@ -1,73 +1,105 @@
-# React + TypeScript + Vite
+# SlatPortafolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un proyecto de portafolio personal construido con **React**, **TypeScript** y **Vite**, diseñado para mostrar tus proyectos y habilidades de forma rápida y profesional.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías
 
-## React Compiler
+* **React** - Biblioteca para interfaces de usuario.
+* **TypeScript** - Superset de JavaScript con tipado estático.
+* **Vite** - Herramienta de construcción ultrarrápida.
+* **ESLint** - Linter para mantener la calidad del código.
+* **Node.js** - Entorno de ejecución de JavaScript.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 💼 Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clona el repositorio:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/dnet0/SlatPortafolio.git
+cd SlatPortafolio
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instala las dependencias:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+---
+
+## ⚡ Uso
+
+Inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+Abre [http://localhost:5173](http://localhost:5173) en tu navegador para ver la aplicación.
+
+---
+
+## 📦 Construcción para Producción
+
+Para generar los archivos de producción:
+
+```bash
+npm run build
+```
+
+El resultado se guardará en la carpeta `dist`.
+
+---
+
+## 🛠 ESLint
+
+El proyecto incluye reglas básicas para **TypeScript** y **React**:
+
+* Reglas recomendadas de TypeScript.
+* Reglas recomendadas de React.
+* Posibilidad de añadir configuraciones más estrictas (`strictTypeChecked`, `stylisticTypeChecked`) y plugins (`eslint-plugin-react-x`, `eslint-plugin-react-dom`).
+
+Ejecuta ESLint con:
+
+```bash
+npm run lint
+```
+
+---
+
+## 🖼 Capturas de Pantalla
+
+*(Aquí puedes añadir imágenes de tu portafolio, por ejemplo:)*
+
+![Home](./screenshots/home.png)
+![Proyectos](./screenshots/projects.png)
+
+---
+
+## 🌐 Demo en Vivo
+
+Puedes agregar un enlace a tu demo:
+
+[Ver Demo](https://tudominio.com)
+
+---
+
+## 🤝 Contribuciones
+
+Si deseas contribuir:
+
+1. Haz un fork del repositorio.
+2. Crea tu rama (`git checkout -b feature/nueva-funcionalidad`).
+3. Haz commit de tus cambios (`git commit -m 'Agrega nueva funcionalidad'`).
+4. Haz push a tu rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request.
+
+---
+
+## 🗑️ Licencia
+
+Este proyecto está bajo la [MIT License](LICENSE).

@@ -3,21 +3,9 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CustomTitle } from "./CustomTitle";
+import { CustomTitle } from "../CustomTitle";
 import { SiGithub } from "react-icons/si";
-
-const projects = [
-  {
-    title: "Título de proyecto",
-    description: "Descripcción de proyect",
-    image:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-    stack: ["React", "TypeScript"],
-    github: "#",
-    demo: "#",
-  },
-];
-
+import projects from "@/data/projects-data.json";
 export const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });

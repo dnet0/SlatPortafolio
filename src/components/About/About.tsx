@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { CustomTitle } from './CustomTitle';
+import { CustomTitle } from '../CustomTitle';
 
 export const About = () => {
   const ref = useRef(null);
@@ -14,6 +14,7 @@ export const About = () => {
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
     >
       <div className="container mx-auto max-w-4xl">
+        
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}

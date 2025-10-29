@@ -1,17 +1,9 @@
 import { motion } from "framer-motion";
-import { ThemeToggle } from "./ThemeToggle";
+import { ThemeToggle } from "../ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-
-const navItems = [
-  { name: "Inicio", href: "#home" },
-  { name: "Sobre mí", href: "#about" },
-  { name: "Habilidades", href: "#skills" },
-  { name: "Educación", href: "#educacion" },
-  { name: "Proyectos", href: "#projects" },
-  { name: "Contacto", href: "#contact" },
-];
+import navItems from "@/data/navItems-data.json";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -35,7 +27,6 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center h-16">
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (

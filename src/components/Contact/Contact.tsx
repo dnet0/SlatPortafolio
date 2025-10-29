@@ -4,12 +4,13 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { LocateIcon, Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { SiLinkedin } from "react-icons/si";
 
 import { SiGithub } from "react-icons/si";
-import { CustomTitle } from "./CustomTitle";
-import { CustomSubDiv } from "./CustomSubDiv";
+import { CustomTitle } from "../CustomTitle";
+import { CustomSubDiv } from "../CustomSubDiv";
+import { CustomCard } from "../CustomCard";
 
 export const Contact = () => {
   const ref = useRef(null);
@@ -51,15 +52,7 @@ export const Contact = () => {
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-card rounded-2xl p-8 shadow-lg border border-border"
-            >
-              <h2 className="text-2xl font-medium text-foreground mb-2">
-                Enviame un mensaje
-              </h2>
+            <CustomCard animate isInView={isInView} title="Enviame un mensaje">
               <form onSubmit={() => {}} className="space-y-6">
                 <div className="space-y-2">
                   <label
@@ -148,7 +141,7 @@ export const Contact = () => {
                   <Send className="ml-2 h-4 w-4" />
                 </Button>
               </form>
-            </motion.div>
+            </CustomCard>
 
             {/* Contact Info */}
             <motion.div
@@ -158,10 +151,7 @@ export const Contact = () => {
               className="space-y-8 "
             >
               {/* Email */}
-              <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
-                <h2 className="text-2xl font-medium text-foreground mb-2">
-                  Información de Contacto
-                </h2>
+              <CustomCard animate={false} title="Información de Contacto">
                 <CustomSubDiv
                   icon={Phone}
                   title="Telefono"
@@ -202,8 +192,7 @@ export const Contact = () => {
                     <SiLinkedin className="w-5 h-5 text-primary" />
                   </div>
                 </a>
-              </div>
-
+              </CustomCard>
               {/* CTA */}
               <div className="bg-linear-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border border-primary/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">

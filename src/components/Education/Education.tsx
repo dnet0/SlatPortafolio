@@ -1,36 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Calendar, BookOpen, Award } from "lucide-react";
-
-const educationData = {
-  degree: "Grado de Ingeniería del Software",
-  institution: "Universidad Complutense de Madrid",
-  period: "2019 - 2023",
-  status: "Egresado",
-  description: "Formación completa en desarrollo de software, arquitectura de sistemas y metodologías ágiles.",
-  highlight: "Trabajo de Fin de Grado: AdaptaMaterialEscolar - Plataforma web con editor de texto para adaptar materiales educativos, integrando API de ChatGPT para generar resúmenes automáticos."
-};
-
-const certifications = [
-  {
-    title: "Arquitectura Software Moderna: DDD, Eventos, Microservicios",
-    institution: "Udemy",
-    date: "Septiembre 2025",
-    focus: "Arquitectura escalable y patrones modernos"
-  },
-  {
-    title: "React Native CLI: Aplicaciones nativas para iOS y Android",
-    institution: "Udemy",
-    date: "Junio 2025",
-    focus: "Desarrollo móvil multiplataforma"
-  },
-  {
-    title: "Google: Inteligencia Artificial y Productividad",
-    institution: "Santander Open Academy",
-    date: "Enero 2025",
-    focus: "IA aplicada a productividad"
-  }
-];
+import educationData from "@/data/education-data.json";
+import certifications from "@/data/certification-data.json"; 
 
 export const Education = () => {
   const ref = useRef(null);

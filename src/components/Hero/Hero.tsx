@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Download, ArrowDown } from "lucide-react";
+import { Download } from "lucide-react";
+import heroData from "@/data/hero-data.json";
 
 export const Hero = () => {
   const scrollToProjects = () => {
@@ -16,7 +17,7 @@ export const Hero = () => {
     link.href = "./Johan_S_Salvatierra_Curriculum.pdf";
     link.download = "Johan_Salvatierra_Curriculum.pdf";
     link.click();
-  }
+  };
 
   return (
     <section
@@ -30,7 +31,6 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-
           {/* Name */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
@@ -67,8 +67,7 @@ export const Hero = () => {
             transition={{ delay: 0.5 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-                Apasionado del desarrollo, con experiencia en entornos empresariales. 
-                Enfocado en crear soluciones escalables, eficientes y alineadas con los objetivos del negocio.
+            {heroData.description}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -90,9 +89,7 @@ export const Hero = () => {
               >
                 <span className="relative z-10 flex items-center">
                   Descargar CV
-                  <Download 
-                  className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform"
-                   />
+                  <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
                 </span>
               </Button>
             </motion.div>
