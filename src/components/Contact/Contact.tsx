@@ -11,26 +11,15 @@ import { SiGithub } from "react-icons/si";
 import { CustomTitle } from "../CustomTitle";
 import { CustomSubDiv } from "../CustomSubDiv";
 import { CustomCard } from "../CustomCard";
+import { useForm, ValidationError } from "@formspree/react";
 
 export const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    asunto: "",
-    message: "",
-  });
-
-  //   const handleSubmit = (e: React.FormEvent) => {
-  //     e.preventDefault();
-  //     toast({
-  //       title: "Mensaje enviado",
-  //       description: "Gracias por contactarme. Te responderé pronto.",
-  //     });
-  //     setFormData({ name: "", email: "", message: "" });
-  //   };
-
+  const [state, handleSubmit] = useForm("xvgvwlkb");
+  if (state.succeeded) {
+    return <p>Thanks for joining!</p>;
+  }
   return (
     <section
       id="contact"
@@ -53,23 +42,26 @@ export const Contact = () => {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
             <CustomCard animate isInView={isInView} title="Enviame un mensaje">
-              <form onSubmit={() => {}} className="space-y-6">
-                <div className="space-y-2">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-2 ">
+                  <input type="text" name="_gotcha" className="hidden" />
                   <label
                     htmlFor="name"
                     className="text-sm font-medium text-foreground"
                   >
-                    Nombre Completo
+                    Nombre Completo *
                   </label>
                   <Input
                     id="name"
-                    placeholder="Johan Salvatierra"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
+                    name="name"
+                    placeholder="Tu nombre"
                     required
                     className="border-border focus:border-primary"
+                  />
+                  <ValidationError
+                    prefix="Name"
+                    field="name"
+                    errors={state.errors}
                   />
                 </div>
 
@@ -78,38 +70,42 @@ export const Contact = () => {
                     htmlFor="email"
                     className="text-sm font-medium text-foreground"
                   >
-                    Email
+                    Email *
                   </label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
-                    placeholder="tu@email.com"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
+                    placeholder="Tu email"
                     required
                     className="border-border focus:border-primary"
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label
-                    htmlFor="email"
+                    htmlFor="asuont"
                     className="text-sm font-medium text-foreground"
                   >
-                    Asunto
+                    Asunto *
                   </label>
                   <Input
                     id="asunto"
+                    name="asunto"
                     type="text"
                     placeholder="Asunto del mensaje"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
                     required
                     className="border-border focus:border-primary"
+                  />
+                  <ValidationError
+                    prefix="Asunto"
+                    field="asunto"
+                    errors={state.errors}
                   />
                 </div>
                 <div className="space-y-2">
@@ -117,18 +113,20 @@ export const Contact = () => {
                     htmlFor="message"
                     className="text-sm font-medium text-foreground"
                   >
-                    Mensaje
+                    Mensaje *
                   </label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Cuéntame sobre tu proyecto..."
                     rows={5}
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
                     required
                     className="border-border focus:border-primary resize-none"
+                  />
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
                   />
                 </div>
 
@@ -136,6 +134,7 @@ export const Contact = () => {
                   type="submit"
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                   size="lg"
+                  disabled={state.submitting}
                 >
                   Enviar Mensaje
                   <Send className="ml-2 h-4 w-4" />

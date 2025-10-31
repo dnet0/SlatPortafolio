@@ -17,7 +17,8 @@ export const BackgroundEffects = () => {
       <motion.div
         className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-20 blur-3xl"
         style={{
-          background: "radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)",
         }}
         animate={{
           scale: [1, 1.2, 1],
@@ -35,7 +36,8 @@ export const BackgroundEffects = () => {
       <motion.div
         className="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15 blur-3xl"
         style={{
-          background: "radial-gradient(circle, hsl(var(--accent)) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, hsl(var(--accent)) 0%, transparent 70%)",
         }}
         animate={{
           scale: [1, 1.3, 1],

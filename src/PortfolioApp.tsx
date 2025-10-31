@@ -5,13 +5,14 @@ import { Skills } from "./components/Skills/Skills";
 import { Projects } from "./components/Projects/Projects";
 import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
-import { BackgroundEffects } from "./components/BackgroundEffects";
+import { BackgroundEffects } from './components/BackgroundEffects';
 import { Education } from "./components/Education/Education";
+import {DynamicNoiseBackground} from "./TVStaticBackground";
 
 export const PortfolioApp = () => {
   return (
     <div className="min-h-screen relative">
-      <BackgroundEffects />
+      <BackgroundEffects/>
       <Navbar />
       <Hero />
       <About />
