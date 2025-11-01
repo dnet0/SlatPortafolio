@@ -4,12 +4,6 @@ import { Download } from "lucide-react";
 import heroData from "@/data/hero-data.json";
 
 export const Hero = () => {
-  const scrollToProjects = () => {
-    const element = document.querySelector("#projects");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   // Function to handle CV download
   // We create a invisible link a click on it to dowload
   const handleDownloadCV = () => {
@@ -96,7 +90,6 @@ export const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Floating decoration with multiple orbs */}
         <div className="mt-16 relative h-40">
           <motion.div
             animate={{

@@ -7,7 +7,6 @@ import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
 import { BackgroundEffects } from './components/BackgroundEffects';
 import { Education } from "./components/Education/Education";
-import {DynamicNoiseBackground} from "./TVStaticBackground";
 
 export const PortfolioApp = () => {
   return (

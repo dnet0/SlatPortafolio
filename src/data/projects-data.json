@@ -40,5 +40,21 @@
     ],
     "github": "https://github.com/dnet0/JohanShop",
     "demo": ""
+  },
+  {
+    "title": "AdaptaMaterialEscolar 2.0",
+    "description": "Herramienta web interactiva desarrollada como Trabajo de Fin de Grado en la UCM. Permite personalizar y adaptar material escolar de forma accesible, modular y colaborativa. Incluye un editor de texto avanzado con Slate.js, exportación a PDF y gestión visual de recursos mediante pictogramas. Diseñada con enfoque inclusivo y construida en React.",
+    "image": "",
+    "stack": [
+      "React",
+      "JavaScript",
+      "Slate.js",
+      "Node.js",
+      "CSS3",
+      "Figma",
+      "Netlify"
+    ],
+    "github": "https://github.com/dnet0/TFG-22-23-AdaptaMaterialEscolar2.0",
+    "demo": "https://adme2.netlify.app/"
   }
 ]

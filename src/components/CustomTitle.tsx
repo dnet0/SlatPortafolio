@@ -4,7 +4,7 @@ interface Props extends PropsWithChildren {
   title: string;
   subTitle?: string;
 }
-export const CustomTitle = ({ title, subTitle, children }: Props) => {
+export const CustomTitle = ({ title, subTitle }: Props) => {
   return (
     <div className="text-center space-y-4">
       <h2 className="text-4xl md:text-5xl font-bold text-gradient">{title}</h2>

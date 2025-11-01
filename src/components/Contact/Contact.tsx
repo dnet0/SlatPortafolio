@@ -1,13 +1,10 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
-import { SiLinkedin } from "react-icons/si";
-
-import { SiGithub } from "react-icons/si";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 import { CustomTitle } from "../CustomTitle";
 import { CustomSubDiv } from "../CustomSubDiv";
 import { CustomCard } from "../CustomCard";
@@ -18,8 +15,25 @@ export const Contact = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [state, handleSubmit] = useForm("xvgvwlkb");
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    return (
+      <section className="flex items-center justify-center min-h-[60vh] text-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="p-6 bg-primary/5 rounded-2xl border border-primary/20"
+        >
+          <h2 className="text-2xl font-semibold text-primary mb-2">
+            ¡Gracias por tu mensaje! 💬
+          </h2>
+          <p className="text-muted-foreground">
+            Me pondré en contacto contigo lo antes posible.
+          </p>
+        </motion.div>
+      </section>
+    );
   }
+
   return (
     <section
       id="contact"
@@ -89,7 +103,7 @@ export const Contact = () => {
 
                 <div className="space-y-2">
                   <label
-                    htmlFor="asuont"
+                    htmlFor="asunto"
                     className="text-sm font-medium text-foreground"
                   >
                     Asunto *
@@ -136,8 +150,17 @@ export const Contact = () => {
                   size="lg"
                   disabled={state.submitting}
                 >
-                  Enviar Mensaje
-                  <Send className="ml-2 h-4 w-4" />
+                  {state.submitting ? (
+                    <>
+                      Enviando...
+                      <Send className="ml-2 h-4 w-4 animate-pulse" />
+                    </>
+                  ) : (
+                    <>
+                      Enviar Mensaje
+                      <Send className="ml-2 h-4 w-4" />
+                    </>
+                  )}
                 </Button>
               </form>
             </CustomCard>
@@ -174,6 +197,7 @@ export const Contact = () => {
                   <a
                     href="https://github.com/dnet0"
                     target="_blank"
+                    aria-label="Github"
                     className="gap-4 p-3 rounded-lg hover:bg-primary/5"
                   >
                     <SiGithub className="w-5 h-5 text-primary" />
@@ -181,6 +205,7 @@ export const Contact = () => {
                   <a
                     href="https://www.linkedin.com/in/johansalgut/"
                     target="_blank"
+                    aria-label="Linkedin"
                     rel="noopener noreferrer"
                     className="gap-4 p-3 rounded-lg hover:bg-primary/5"
                   >
