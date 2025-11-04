@@ -1,0 +1,33 @@
+{
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Do you have a project in mind? Let's talk!",
+        "form": {
+            "title": "Send me a message",
+            "inputNombre": "Full Name *",
+            "placeHolderNombre": "Your name",
+            "inputEmail": "Email *",
+            "placeHolderEmail": "Your email",
+            "inputAsunto": "Subject *",
+            "placeHolderAsunto": "Message subject",
+            "inputMensaje": "Message *",
+            "placeHolderMensaje": "Tell me about your project...",
+            "submit": "Send message",
+            "submiting": "Sending..."
+        },
+        "data": {
+            "title": "Contact Information",
+            "telefonoTitle": "Phone",
+            "emailTitle": "Email",
+            "ubicacionTitle": "Location"
+        },
+        "oferta": {
+            "title": "Looking to hire talent or start a new project?",
+            "description": "From personal projects to business ventures, I am always open to new ideas and conversations about development."
+        },
+        "confirmationMessage": {
+            "title": "Thank you for your message! 💬",
+            "subtitle": "I will get in touch with you as soon as possible."
+        }
+    }
+}

@@ -4,12 +4,14 @@ import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
 import { CustomTitle } from "../CustomTitle";
-import { skillCategories } from '../../data/SkilsCategories';
+import { SkillCategories } from "../../data/SkilsCategories";
+import { useTranslation } from "react-i18next";
 
 export const Skills = () => {
+  const { t } = useTranslation("skills-data");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
+  const skillCategoiesDTO = SkillCategories();
   return (
     <section
       id="skills"
@@ -24,11 +26,11 @@ export const Skills = () => {
           className="space-y-12"
         >
           {/* Section Title */}
-          <CustomTitle title="Habilidades Técnicas" />
+          <CustomTitle title={t("title")} />
 
           {/* Skills Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skillCategories.map((category, categoryIndex) => (
+            {skillCategoiesDTO.map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
                 initial={{ opacity: 0, y: 30 }}
@@ -43,7 +45,7 @@ export const Skills = () => {
                   <h3 className="text-2xl font-bold text-foreground mb-1">
                     {category.title}
                   </h3>
-                  <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full" />
+                  <div className="w-12 h-1 bg-linear-to-r from-primary to-accent rounded-full" />
                 </div>
 
                 {/* Skills List */}

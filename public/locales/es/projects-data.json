@@ -1,0 +1,66 @@
+{
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Estos son algunos de mis proyectos que reflejan mis habilidades y experiencia. Siempre estoy en busca de nuevos desafíos y oportunidades para seguir creciendo como desarrollador",
+    "data": [
+      {
+        "title": "Portfolio Personal",
+        "description": "Portafolio personal construido con React y TypeScript, con diseño moderno y responsive usando Tailwind CSS, navegación SPA fluida, sección de habilidades y elementos interactivos.",
+        "image": "",
+        "stack": [
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "esLint",
+          "Vite"
+        ],
+        "github": "https://github.com/dnet0/SlatPortafolio",
+        "demo": "#"
+      },
+      {
+        "title": "JapanOffline",
+        "description": "Esta web ha sido creada con un objetivo muy claro: ayudarte a desenvolverte en Japón incluso cuando no tengas conexión a internet. Aquí encontrarás frases útiles, información de transporte, cultura, direcciones, números de emergencia y mucho más. Todo está pensado para que puedas descargar la guía en PDF 📄 y llevarla siempre contigo, ya sea en el móvil, la tablet o impresa en papel. De esta forma, aunque te quedes sin datos o Wi-Fi, tendrás un manual de supervivencia listo para sacarte de apuros.",
+        "image": "",
+        "stack": [
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "esLint",
+          "Vite"
+        ],
+        "github": "https://github.com/dnet0/JapanOffline",
+        "demo": "https://slatportafolio.netlify.app/"
+      },
+      {
+        "title": "JohanShop",
+        "description": "Aplicación web de práctica para la gestión de una tienda online. Incluye catálogo de productos, carrito de compras y sistema básico de administración. Construido con React y TypeScript, usando Tailwind CSS para un diseño moderno, responsive y fácil de usar.",
+        "image": "",
+        "stack": [
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "esLint",
+          "Vite"
+        ],
+        "github": "https://github.com/dnet0/JohanShop",
+        "demo": ""
+      },
+      {
+        "title": "AdaptaMaterialEscolar 2.0",
+        "description": "Herramienta web interactiva desarrollada como Trabajo de Fin de Grado en la UCM. Permite personalizar y adaptar material escolar de forma accesible, modular y colaborativa. Incluye un editor de texto avanzado con Slate.js, exportación a PDF y gestión visual de recursos mediante pictogramas. Diseñada con enfoque inclusivo y construida en React.",
+        "image": "",
+        "stack": [
+          "React",
+          "JavaScript",
+          "Slate.js",
+          "Node.js",
+          "CSS3",
+          "Figma",
+          "Netlify"
+        ],
+        "github": "https://github.com/dnet0/TFG-22-23-AdaptaMaterialEscolar2.0",
+        "demo": "https://adme2.netlify.app/"
+      }
+    ]
+  }
+}

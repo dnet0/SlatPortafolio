@@ -1,0 +1,10 @@
+{
+    "about": {
+        "title": "Sobre Mí",
+        "data": [
+            "Soy un desarrollador frontend apasionado por crear interfaces web intuitivas y atractivas. Con experiencia en tecnologías modernas como React, TypeScript y Tailwind CSS, me especializo en transformar diseños en experiencias digitales fluidas y responsive.",
+            "Soy Ingeniero de Software especializado en desarrollo backend y full stack, con experiencia demostrada en entornos empresariales exigentes y tecnologías clave como Java, Spring Boot, SQL, Node.js, Angular y metodologías ágiles (Scrum). He formado parte de NTT DATA, donde participe en el desarrollo de soluciones para Enagas.",
+            "Mi diferencial está en combinar una base técnica sólida con mentalidad analítica, constancia y un enfoque 100% orientado a resultados. No solo desarrollo software: identifico problemas, propongo mejoras y construyo soluciones escalables, mantenibles y alineadas con los objetivos del negocio."
+        ]
+    }
+}

@@ -5,8 +5,11 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CustomTitle } from "../CustomTitle";
 import { SiGithub } from "react-icons/si";
-import projects from "@/data/projects-data.json";
+import { useTranslation } from "react-i18next";
+import type { ProjectDTO } from "@/interface/ProjectDTO";
 export const Projects = () => {
+  const { t } = useTranslation("projects-data");
+  const projects = t("projects", { returnObjects: true }) as ProjectDTO;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -24,16 +27,11 @@ export const Projects = () => {
           className="space-y-12"
         >
           {/* Section Title */}
-          <CustomTitle
-            title="Proyectos"
-            subTitle="Estos son algunos de mis proyectos que reflejan mis habilidades y
-              experiencia. Siempre estoy en busca de nuevos desafíos y
-              oportunidades para seguir creciendo como desarrollador"
-          />
+          <CustomTitle title={projects.title} subTitle={projects.subtitle} />
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {projects.data.map((project, index) => (
               <motion.div
                 key={project.title}
                 initial={{ opacity: 0, y: 30 }}

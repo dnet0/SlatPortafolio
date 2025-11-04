@@ -1,15 +1,24 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Calendar, BookOpen, Award } from "lucide-react";
-import educationData from "@/data/education-data.json";
-import certifications from "@/data/certification-data.json"; 
+import { useTranslation } from "react-i18next";
+import type { EducationDTO } from "@/interface/EducationDTO";
+import type { CoursesDTO } from "@/interface/CoursesDTO";
 
 export const Education = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
+  const  {t} = useTranslation("education-data");
+  const education = t("education", {returnObjects: true}) as EducationDTO;
+  const { t:t2 } = useTranslation("certification-data");
+  const courses = t2("courses", { returnObjects: true }) as CoursesDTO;
+
   return (
-    <section id="educacion" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-muted/30">
+    <section
+      id="educacion"
+      className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-muted/30"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -27,11 +36,11 @@ export const Education = () => {
             <GraduationCap className="w-8 h-8 text-primary" />
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Formación Académica</span>
+            <span className="text-gradient">{education.title}</span>
           </h2>
           <div className="w-24 h-1 bg-linear-to-r from-transparent via-primary to-transparent mx-auto mb-6" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Educación universitaria y especialización en ingeniería de software
+            {education.subtitle}
           </p>
         </motion.div>
 
@@ -52,27 +61,29 @@ export const Education = () => {
                         <GraduationCap className="w-6 h-6 text-primary" />
                       </div>
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20">
-                        {educationData.status}
+                        {education.status}
                       </span>
                     </div>
                     <h3 className="text-3xl font-bold mb-2 text-foreground">
-                      {educationData.degree}
+                      {education.degree}
                     </h3>
                     <p className="text-lg text-primary font-semibold mb-1">
-                      {educationData.institution}
+                      {education.institution}
                     </p>
                   </div>
-                  
+
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar className="w-5 h-5" />
-                    <span className="text-sm font-medium">{educationData.period}</span>
+                    <span className="text-sm font-medium">
+                      {education.period}
+                    </span>
                   </div>
                 </div>
 
                 <div className="w-full h-px bg-linear-to-r from-transparent via-border to-transparent mb-6" />
 
                 <p className="text-muted-foreground text-base leading-relaxed mb-6">
-                  {educationData.description}
+                  {education.description}
                 </p>
 
                 <motion.div
@@ -85,10 +96,10 @@ export const Education = () => {
                     <BookOpen className="w-5 h-5 text-primary shrink-0 mt-1" />
                     <div>
                       <h4 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wide">
-                        Proyecto Destacado
+                        {education.projectTitle}
                       </h4>
                       <p className="text-foreground/80 text-sm leading-relaxed">
-                        {educationData.highlight}
+                        {education.highlight}
                       </p>
                     </div>
                   </div>
@@ -111,12 +122,12 @@ export const Education = () => {
                 <Award className="w-5 h-5 text-accent" />
               </div>
               <h3 className="text-2xl font-bold text-foreground">
-                Certificaciones Profesionales
+                {courses.title}
               </h3>
             </div>
 
             <div className="grid gap-6">
-              {certifications.map((cert, index) => (
+              {courses.data.map((cert, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
@@ -144,7 +155,6 @@ export const Education = () => {
                       </span>
                     </div>
                   </div>
-
                 </motion.div>
               ))}
             </div>

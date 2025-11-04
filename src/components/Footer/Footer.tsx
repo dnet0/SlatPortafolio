@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
 export const Footer = () => {
+  const {t} = useTranslation("footer-data");
+  const footer = t("footer");
   const currentYear = new Date().getFullYear();
 
   return (
@@ -16,7 +19,7 @@ export const Footer = () => {
           {/* Texto de derechos */}
           <p className="text-muted-foreground text-sm">
             © {currentYear} <span className="font-medium text-foreground">Johan Salvatierra</span>.  
-            Todos los derechos reservados.
+            {footer}
           </p>
 
           {/* Enlaces sociales */}

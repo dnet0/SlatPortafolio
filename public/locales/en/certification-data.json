@@ -1,0 +1,25 @@
+{
+    "courses": {
+        "title": "Professional Certifications",
+        "data": [
+            {
+                "title": "Modern Software Architecture: DDD, Events, Microservices",
+                "institution": "Udemy",
+                "date": "September 2025",
+                "focus": "Scalable architecture and modern patterns"
+            },
+            {
+                "title": "React Native CLI: Native Apps for iOS and Android",
+                "institution": "Udemy",
+                "date": "June 2025",
+                "focus": "Cross-platform mobile development"
+            },
+            {
+                "title": "Google: Artificial Intelligence and Productivity",
+                "institution": "Santander Open Academy",
+                "date": "January 2025",
+                "focus": "AI applied to productivity"
+            }
+        ]
+    }
+}

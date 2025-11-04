@@ -9,11 +9,16 @@ import { CustomTitle } from "../CustomTitle";
 import { CustomSubDiv } from "../CustomSubDiv";
 import { CustomCard } from "../CustomCard";
 import { useForm, ValidationError } from "@formspree/react";
+import { useTranslation } from "react-i18next";
+import type { ContactDTO } from "@/interface/ContactDTO";
 
 export const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [state, handleSubmit] = useForm("xvgvwlkb");
+  const { t } = useTranslation("contact-data");
+  const contact = t("contact", { returnObjects: true }) as ContactDTO;
+  console.log(contact)
   if (state.succeeded) {
     return (
       <section className="flex items-center justify-center min-h-[60vh] text-center">
@@ -24,10 +29,10 @@ export const Contact = () => {
           className="p-6 bg-primary/5 rounded-2xl border border-primary/20"
         >
           <h2 className="text-2xl font-semibold text-primary mb-2">
-            ¡Gracias por tu mensaje! 💬
+            {contact.confirmationMessage.title}
           </h2>
           <p className="text-muted-foreground">
-            Me pondré en contacto contigo lo antes posible.
+            {contact.confirmationMessage.subtitle}
           </p>
         </motion.div>
       </section>
@@ -48,10 +53,7 @@ export const Contact = () => {
           className="space-y-12"
         >
           {/* Section Title */}
-          <CustomTitle
-            title="Contacto"
-            subTitle="¿Tienes un proyecto en mente? ¡Hablemos!"
-          />
+          <CustomTitle title={contact.title} subTitle={contact.subtitle} />
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -63,12 +65,12 @@ export const Contact = () => {
                     htmlFor="name"
                     className="text-sm font-medium text-foreground"
                   >
-                    Nombre Completo *
+                    {contact.form.inputNombre}
                   </label>
                   <Input
                     id="name"
                     name="name"
-                    placeholder="Tu nombre"
+                    placeholder={contact.form.placeHolderNombre}
                     required
                     className="border-border focus:border-primary"
                   />
@@ -84,13 +86,13 @@ export const Contact = () => {
                     htmlFor="email"
                     className="text-sm font-medium text-foreground"
                   >
-                    Email *
+                    {contact.form.inputEmail}
                   </label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="Tu email"
+                    placeholder={contact.form.placeHolderEmail}
                     required
                     className="border-border focus:border-primary"
                   />
@@ -106,13 +108,13 @@ export const Contact = () => {
                     htmlFor="asunto"
                     className="text-sm font-medium text-foreground"
                   >
-                    Asunto *
+                    {contact.form.inputAsunto}
                   </label>
                   <Input
                     id="asunto"
                     name="asunto"
                     type="text"
-                    placeholder="Asunto del mensaje"
+                    placeholder={contact.form.placeHolderAsunto}
                     required
                     className="border-border focus:border-primary"
                   />
@@ -127,12 +129,12 @@ export const Contact = () => {
                     htmlFor="message"
                     className="text-sm font-medium text-foreground"
                   >
-                    Mensaje *
+                    {contact.form.inputMensaje}
                   </label>
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Cuéntame sobre tu proyecto..."
+                    placeholder={contact.form.placeHolderAsunto}
                     rows={5}
                     required
                     className="border-border focus:border-primary resize-none"
@@ -152,12 +154,12 @@ export const Contact = () => {
                 >
                   {state.submitting ? (
                     <>
-                      Enviando...
+                     {contact.form.submiting}
                       <Send className="ml-2 h-4 w-4 animate-pulse" />
                     </>
                   ) : (
                     <>
-                      Enviar Mensaje
+                     {contact.form.submit}
                       <Send className="ml-2 h-4 w-4" />
                     </>
                   )}
@@ -173,22 +175,22 @@ export const Contact = () => {
               className="space-y-8 "
             >
               {/* Email */}
-              <CustomCard animate={false} title="Información de Contacto">
+              <CustomCard animate={false} title={contact.data.title}>
                 <CustomSubDiv
                   icon={Phone}
-                  title="Telefono"
+                  title={contact.data.telefonoTitle}
                   subTitle="+34 610932370"
                   href="tel:+34610932370"
                 />
                 <CustomSubDiv
                   icon={Mail}
-                  title="Email"
+                  title={contact.data.emailTitle}
                   subTitle="johansalgut@gmail.com"
                   href="mailto:johansalgut@gmail.com"
                 />
                 <CustomSubDiv
                   icon={MapPin}
-                  title="Ubicación"
+                  title={contact.data.ubicacionTitle}
                   subTitle="Madrid"
                 />
                 <hr />
@@ -216,12 +218,10 @@ export const Contact = () => {
               {/* CTA */}
               <div className="bg-linear-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border border-primary/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">
-                  ¿Buscás incorporar talento o iniciar un nuevo proyecto?
+                  {contact.oferta.title}
                 </h3>
                 <p className="text-muted-foreground">
-                  Desde proyectos personales hasta proyectos empresariales,
-                  siempre estoy abierto a nuevas ideas y conversaciones sobre
-                  desarrollo.
+                  {contact.oferta.description}
                 </p>
               </div>
             </motion.div>

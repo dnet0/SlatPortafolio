@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
 import { ThemeToggle } from "../ThemeToggle";
+import { LanguageToggle } from "../LanguageToggle";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import navItems from "@/data/navItems-data.json";
+import { useTranslation } from "react-i18next";
+import type { NavDTO } from "@/interface/NavDTO";
 
 export const Navbar = () => {
+  const { t } = useTranslation("navItems-data");
+  const navItems = t("nav", { returnObjects: true }) as NavDTO[];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (href: string) => {
@@ -43,12 +47,15 @@ export const Navbar = () => {
                 {item.name}
               </motion.a>
             ))}
+            <LanguageToggle />
             <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
+            <LanguageToggle />
+
             <Button
               variant="ghost"
               size="icon"

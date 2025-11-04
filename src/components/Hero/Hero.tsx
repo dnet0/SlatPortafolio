@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import heroData from "@/data/hero-data.json";
+import { useTranslation } from "react-i18next";
+import type { HeroDTO } from "@/interface/HeroDTO";
 
 export const Hero = () => {
-  // Function to handle CV download
-  // We create a invisible link a click on it to dowload
+  const { t } = useTranslation("hero-data");
+  const hero = t("hero", { returnObjects: true }) as HeroDTO;
+  // Función para descargar el curriculum
+  // Creamos un link invisible y lo clickeamos para descargar
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = "./Johan_S_Salvatierra_Curriculum.pdf";
@@ -36,7 +39,6 @@ export const Hero = () => {
             Johan Salvatierra
           </motion.h1>
 
-          {/* Art Deco divider */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -51,7 +53,7 @@ export const Hero = () => {
             transition={{ delay: 0.4 }}
             className="text-2xl md:text-4xl font-semibold text-foreground/80"
           >
-            Software Engineer
+            {hero.role}
           </motion.h2>
 
           {/* Description */}
@@ -61,7 +63,7 @@ export const Hero = () => {
             transition={{ delay: 0.5 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            {heroData.description}
+            {hero.description}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -82,7 +84,7 @@ export const Hero = () => {
                 onClick={handleDownloadCV}
               >
                 <span className="relative z-10 flex items-center">
-                  Descargar CV
+                  {hero.downloadCV}
                   <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
                 </span>
               </Button>

@@ -1,0 +1,13 @@
+{
+    "education": {
+        "title": "Academic Background",
+        "subtitle": "University education and specialization in software engineering",
+        "projectTitle": "Featured Project",
+        "degree": "Bachelor's Degree in Software Engineering",
+        "institution": "Complutense University of Madrid",
+        "period": "2019 - 2023",
+        "status": "Graduated",
+        "description": "Comprehensive training in software development, system architecture, and agile methodologies.",
+        "highlight": "Final Degree Project: AdaptaMaterialEscolar - Web platform with a text editor to adapt educational materials, integrating the ChatGPT API to generate automatic summaries."
+    }
+}
