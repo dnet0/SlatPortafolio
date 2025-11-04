@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-import { cn } from "@/lib/utils";
 import { CustomTitle } from "../CustomTitle";
 import { SkillCategories } from "../../data/SkilsCategories";
 import { useTranslation } from "react-i18next";
+import { SkillsGrid } from "./SkillsGrid";
 
 export const Skills = () => {
-  const { t } = useTranslation("skills-data");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useTranslation("skills-data");
   const skillCategoiesDTO = SkillCategories();
   return (
     <section
@@ -50,48 +50,14 @@ export const Skills = () => {
 
                 {/* Skills List */}
                 <div className="space-y-5">
-                  {category.skills.map((skill, skillIndex) => {
-                    const SkillIcon = skill.icon;
-                    return (
-                      <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={
-                          isInView
-                            ? { opacity: 1, x: 0 }
-                            : { opacity: 0, x: -20 }
-                        }
-                        transition={{
-                          delay: categoryIndex * 0.2 + skillIndex * 0.1,
-                          duration: 0.4,
-                        }}
-                        className="space-y-2 group"
-                      >
-                        <div className="flex items-center gap-3">
-                          <motion.div
-                            whileHover={{ scale: 1.2, rotate: 5 }}
-                            className="shrink-0 p-2 rounded-lg bg-background/50 group-hover:bg-primary/10 transition-colors"
-                          >
-                            <SkillIcon
-                              className="w-5 h-5 transition-colors"
-                              style={{ color: skill.color }}
-                            />
-                          </motion.div>
-                          <div className="flex-1 flex justify-between items-center">
-                            <span
-                              color={skill.color}
-                              className={cn(
-                                "text-sm font-medium",
-                                `text-[${skill.color}]`
-                              )}
-                            >
-                              {skill.name}
-                            </span>
-                          </div>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
+                  {category.skills.map((skill, skillIndex) => (
+                    <SkillsGrid
+                      skill={skill}
+                      isInView={isInView}
+                      categoryIndex={categoryIndex}
+                      skillIndex={skillIndex}
+                    />
+                  ))}
                 </div>
               </motion.div>
             ))}
