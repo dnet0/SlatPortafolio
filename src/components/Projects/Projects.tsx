@@ -105,29 +105,31 @@ export const Projects = () => {
                         </a>
                       </Button>
                     </motion.div>
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex-1"
-                    >
-                      <Button
-                        size="sm"
-                        className="w-full bg-linear-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/30 text-primary-foreground relative overflow-hidden group"
-                        asChild
+                    {project.demo && (
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1"
                       >
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center"
+                        <Button
+                          size="sm"
+                          className="w-full bg-linear-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/30 text-primary-foreground relative overflow-hidden group"
+                          asChild
                         >
-                          <span className="relative z-10 flex items-center">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Demo
-                          </span>
-                        </a>
-                      </Button>
-                    </motion.div>
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center"
+                          >
+                            <span className="relative z-10 flex items-center">
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Demo
+                            </span>
+                          </a>
+                        </Button>
+                      </motion.div>
+                    )}
                   </div>
                 </div>
               </motion.div>

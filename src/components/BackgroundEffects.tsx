@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 export const BackgroundEffects = () => {
-  // Generate random positions for particles
   const particles = Array.from({ length: 20 }, (_, i) => ({
     id: i,
     size: Math.random() * 6 + 2,
@@ -13,7 +12,7 @@ export const BackgroundEffects = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
-      {/* Animated gradient orbs */}
+      {/* Animación gradual de orbes */}
       <motion.div
         className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-20 blur-3xl"
         style={{
@@ -52,7 +51,7 @@ export const BackgroundEffects = () => {
         }}
       />
 
-      {/* Floating particles */}
+      {/* Particulas flotantes */}
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
