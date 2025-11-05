@@ -2,9 +2,9 @@
     "about": {
         "title": "About Me",
         "data": [
-            "I am a frontend developer passionate about creating intuitive and attractive web interfaces. With experience in modern technologies like React, TypeScript, and Tailwind CSS, I specialize in transforming designs into smooth, responsive digital experiences.",
-            "I am a Software Engineer specialized in backend and full-stack development, with proven experience in demanding corporate environments and key technologies such as Java, Spring Boot, SQL, Node.js, Angular, and agile methodologies (Scrum). I have been part of NTT DATA, where I participated in developing solutions for Enagas.",
-            "My differentiator lies in combining a solid technical foundation with an analytical mindset, consistency, and a 100% results-oriented approach. I don't just develop software: I identify problems, propose improvements, and build scalable, maintainable solutions aligned with business goals."
+            "I am a Software Engineer specialized in backend and full stack development, with experience in demanding enterprise environments and expertise in key technologies such as Java, Spring Boot, SQL, Node.js, and Angular.",
+            "During my time at NTT DATA, I contributed to the development of solutions for Enagás, participating in the design, analysis, and optimization of complex enterprise systems. This experience has allowed me to develop a comprehensive understanding of the entire software development lifecycle—from planning and development to testing and continuous integration.",
+            "What sets me apart is my ability to combine a strong technical foundation with an analytical mindset, persistence, and a results-driven approach. I don’t just develop software: I identify problems, propose improvements, and build scalable, maintainable solutions aligned with business goals."
         ]
     }
 }
