@@ -15,7 +15,7 @@ export const Navbar = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView();
       setMobileMenuOpen(false);
     }
   };
