@@ -11,7 +11,7 @@ export const BackgroundEffects = () => {
   }));
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden pt-20 md:pt-24 will-change-transform"
+    <div className="absolute inset-0 pointer-events-none overflow-hidden pt-20 md:pt-24 will-change-transform"
     style={{
       zIndex: -1,
       transform: "translateZ(0)"
