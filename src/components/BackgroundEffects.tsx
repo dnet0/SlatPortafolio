@@ -11,7 +11,11 @@ export const BackgroundEffects = () => {
   }));
 
   return (
-    <motion.div className="fixed inset-0 pointer-events-none overflow-hidden pt-20 md:pt-24">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden pt-20 md:pt-24 will-change-transform"
+    style={{
+      zIndex: -1,
+      transform: "translateZ(0)"
+    }}>
       {/* Animación gradual de orbes */}
       <motion.div
         className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-20 blur-3xl"
@@ -94,6 +98,6 @@ export const BackgroundEffects = () => {
           ease: "easeInOut",
         }}
       />
-    </motion.div>
+    </div>
   );
 };
