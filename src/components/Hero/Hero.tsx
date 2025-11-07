@@ -19,7 +19,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 md:pt-24"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16"
     >
       <div className="container mx-auto text-center">
         <motion.div

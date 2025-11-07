@@ -142,3 +142,10 @@
   --background: hsl(150 25% 8%);
   --foreground: hsl(150 10% 95%);
 }
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
