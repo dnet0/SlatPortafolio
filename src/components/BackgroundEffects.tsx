@@ -1,21 +1,18 @@
 import { motion } from "framer-motion";
 
+// TODO: Los particulas flotantes, no permiten ver fluidamente el texto
 export const BackgroundEffects = () => {
-  const particles = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    size: Math.random() * 6 + 2,
-    left: Math.random() * 100,
-    top: Math.random() * 100,
-    delay: Math.random() * 5,
-    duration: Math.random() * 10 + 10,
-  }));
+  // const particles = Array.from({ length: 20 }, (_, i) => ({
+  //   id: i,
+  //   size: Math.random() * 3 + 2,
+  //   left: Math.random() * 100,
+  //   top: Math.random() * 100,
+  //   delay: Math.random() * 5,
+  //   duration: Math.random() * 10 + 10,
+  // }));
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden pt-20 md:pt-24 will-change-transform"
-    style={{
-      zIndex: -1,
-      transform: "translateZ(0)"
-    }}>
+    <motion.div className="fixed inset-0 pointer-events-none overflow-hidden will-change-transform">
       {/* Animación gradual de orbes */}
       <motion.div
         className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-20 blur-3xl"
@@ -54,8 +51,7 @@ export const BackgroundEffects = () => {
           ease: "easeInOut",
         }}
       />
-
-      {/* Particulas flotantes */}
+{/* 
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
@@ -65,7 +61,6 @@ export const BackgroundEffects = () => {
             height: particle.size,
             left: `${particle.left}%`,
             top: `${particle.top}%`,
-            filter: "blur(1px)",
           }}
           animate={{
             y: [0, -30, 0],
@@ -80,7 +75,8 @@ export const BackgroundEffects = () => {
             ease: "easeInOut",
           }}
         />
-      ))}
+      ))} 
+      */}
 
       {/* Scan lines effect */}
       <motion.div
@@ -98,6 +94,6 @@ export const BackgroundEffects = () => {
           ease: "easeInOut",
         }}
       />
-    </div>
+    </motion.div>
   );
 };
