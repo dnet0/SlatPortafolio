@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { CustomTitle } from "../CustomTitle";
+import { CustomTitle } from "../../CustomTitle";
 import { useTranslation } from "react-i18next";
 import type { AboutDTO } from "@/interface/AboutDTO";
 

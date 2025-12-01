@@ -1,18 +1,17 @@
-import { Navbar } from "./components/Navbar/Navbar";
-import { Hero } from "./components/Hero/Hero";
-import { About } from "./components/About/About";
-import { Skills } from "./components/Skills/Skills";
-import { Projects } from "./components/Projects/Projects";
-import { Contact } from "./components/Contact/Contact";
-import { Footer } from "./components/Footer/Footer";
-import { BackgroundEffects } from './components/BackgroundEffects';
-import { Education } from "./components/Education/Education";
-import './i18n'; 
+import { Navbar } from "./components/Home/Navbar/Navbar";
+import { Hero } from "./components/Home/Hero/Hero";
+import { About } from "./components/Home/About/About";
+import { Skills } from "./components/Home/Skills/Skills";
+import { Projects } from "./components/Home/Projects/Projects";
+import { Contact } from "./components/Home/Contact/Contact";
+import { Footer } from "./components/Home/Footer/Footer";
+import { BackgroundEffects } from "./components/BackgroundEffects";
+import { Education } from "./components/Home/Education/Education";
 
-export const PortfolioApp = () => {
+const PortfolioApp = () => {
   return (
     <div className="min-h-screen relative">
-      <BackgroundEffects/>
+      <BackgroundEffects />
       <Navbar />
       <Hero />
       <About />
@@ -22,5 +21,7 @@ export const PortfolioApp = () => {
       <Contact />
       <Footer />
     </div>
-  )
-}
+  );
+};
+
+export default PortfolioApp;

@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-
-import { CustomTitle } from "../CustomTitle";
-import { SkillCategories } from "../../data/SkilsCategories";
+import { CustomTitle } from "../../CustomTitle";
+import { SkillCategories } from "../../../data/SkilsCategories";
 import { useTranslation } from "react-i18next";
 import { SkillsGrid } from "./SkillsGrid";
 

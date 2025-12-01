@@ -3,7 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CustomTitle } from "../CustomTitle";
+import { CustomTitle } from "../../CustomTitle";
 import { SiGithub } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 import type { ProjectDTO } from "@/interface/ProjectDTO";

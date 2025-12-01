@@ -14,7 +14,7 @@ export const CustomSubDiv = ({ icon, title, subTitle, href }: Props) => {
       <div className="p-3 bg-primary/10 rounded-lg">
         <SkillIcon className="w-6 h-6 text-primary" />
       </div>
-      <div>
+      <div className="flex flex-col items-start justify-start">
         <h3 className="text-md font-semibold text-foreground">{title}</h3>
         {href ? (
           <a

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { ThemeToggle } from "../ThemeToggle";
-import { LanguageToggle } from "../LanguageToggle";
+import { ThemeToggle } from "../../ThemeToggle";
+import { LanguageToggle } from "../../LanguageToggle";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -82,7 +82,7 @@ export const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="block px-4 py-2 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors cursor-pointer"
+                className="block px-4 py-2 texto-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors cursor-pointer"
               >
                 {item.name}
               </a>
