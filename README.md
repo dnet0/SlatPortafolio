@@ -1,6 +1,6 @@
 # SlatPortafolio
 
-Un proyecto de portafolio personal construido con **React**, **TypeScript** y **Vite**, diseñado para mostrar tus proyectos y habilidades de forma rápida y profesional.
+Un proyecto de portafolio personal construido con **React**, **TypeScript** y **Vite**.
 
 ---
 
