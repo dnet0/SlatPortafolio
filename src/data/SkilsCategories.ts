@@ -18,6 +18,7 @@ import {
   SiOracle,
   SiMongodb,
   SiSonar,
+  SiDocker,
 } from "react-icons/si";
 
 import { VscCode } from "react-icons/vsc";
@@ -28,7 +29,7 @@ import { CustomEmptyIcon } from "../components/CustomEmptyIcon";
 import { useTranslation } from "react-i18next";
 import type { SkillsDTO } from "@/interface/SkillsDTO";
 
-export const SkillCategories = ():SkillsDTO[] => {
+export const SkillCategories = (): SkillsDTO[] => {
   const { t } = useTranslation("skills-data");
 
   return [
@@ -65,12 +66,14 @@ export const SkillCategories = ():SkillsDTO[] => {
         { name: "Vite", icon: SiVite, color: "#61DAFB" },
         { name: "Jenkins", icon: SiJenkins, color: "#D24939" },
         { name: "SonarQube", icon: SiSonar, color: "#4E9BCD" },
+        { name: "Docker", icon: SiDocker, color: "#4E9BCD" },
       ],
     },
     {
       title: t("architecture"),
       skills: [
         { name: "Microservicios", icon: SiMicrodotblog, color: "#00BFFF" },
+        { name: "Hexagonal", icon: CustomEmptyIcon, color: "#6DB23F" },
         { name: "MVC", icon: CustomEmptyIcon, color: "#FF9900" },
         { name: "SOLID Principles", icon: CustomEmptyIcon, color: "#800080" },
         { name: "Scrum/Agile", icon: CustomEmptyIcon, color: "#008000" },

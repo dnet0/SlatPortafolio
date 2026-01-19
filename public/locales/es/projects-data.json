@@ -19,7 +19,7 @@
       },
       {
         "title": "JapanOffline",
-        "description": "Esta web ha sido creada con un objetivo muy claro: ayudarte a desenvolverte en Japón incluso cuando no tengas conexión a internet. Aquí encontrarás frases útiles, información de transporte, cultura, direcciones, números de emergencia y mucho más. Todo está pensado para que puedas descargar la guía en PDF 📄 y llevarla siempre contigo, ya sea en el móvil, la tablet o impresa en papel. De esta forma, aunque te quedes sin datos o Wi-Fi, tendrás un manual de supervivencia listo para sacarte de apuros.",
+        "description": "Guía interactiva para viajar por Japón sin conexión. Incluye frases útiles, transporte, cultura y recursos esenciales, con opción de descargar todo en PDF para usarlo sin internet.",
         "image": "",
         "stack": [
           "React",
@@ -29,7 +29,7 @@
           "Vite"
         ],
         "github": "https://github.com/dnet0/JapanOffline",
-        "demo": "https://slatportafolio.netlify.app/"
+        "demo": "https://japon-offline.netlify.app/"
       },
       {
         "title": "JohanShop",
@@ -60,6 +60,23 @@
         ],
         "github": "https://github.com/dnet0/TFG-22-23-AdaptaMaterialEscolar2.0",
         "demo": "https://adme2.netlify.app/"
+      },
+      {
+        "title": "BankHelp",
+        "description": "Simulador bancario con arquitectura hexagonal y DDD táctico. Incluye casos de uso claros, seguridad con JWT, repositorios desacoplados y pruebas de integración con Testcontainers.",
+        "image": "",
+        "stack": [
+          "Java 17",
+          "Spring Boot 4",
+          "Hexagonal Architecture",
+          "DDD Táctico",
+          "Spring Security",
+          "JWT",
+          "PostgreSQL",
+          "Testcontainers"
+        ],
+        "github": "https://github.com/dnet0/bankhelp",
+        "demo": ""
       }
     ]
   }

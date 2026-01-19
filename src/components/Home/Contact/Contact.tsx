@@ -18,7 +18,7 @@ export const Contact = () => {
   const [state, handleSubmit] = useForm("xvgvwlkb");
   const { t } = useTranslation("contact-data");
   const contact = t("contact", { returnObjects: true }) as ContactDTO;
-  console.log(contact)
+
   if (state.succeeded) {
     return (
       <section className="flex items-center justify-center min-h-[60vh] text-center">
